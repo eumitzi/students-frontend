@@ -1,0 +1,70 @@
+<div>
+    <app-widget-area [data]="bigChart"></app-widget-area>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<!-- Export Button  -->
+<div class="container">
+    <div class="row py-5 justify-content-center">
+     <div class="col-md-8">
+       <div class="col-md-12 table-responsive" #table>
+       <div style="padding-bottom: 10px;padding-top: 10px;">
+        <div class="row">
+         <div class="col-sm-12">
+          <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button> 
+         </div>
+        </div>
+       </div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="60">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="nrCrt">
+                    <th mat-header-cell *matHeaderCellDef> Nr.Crt. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nrCrt}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="numeDisciplina">
+                    <th mat-header-cell *matHeaderCellDef> Nume disciplina </th>
+                    <td mat-cell *matCellDef="let element"> {{element.numeStudent}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="nota">
+                    <th mat-header-cell *matHeaderCellDef> Nota </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nota}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="semestru">
+                    <th mat-header-cell *matHeaderCellDef> Semestru </th>
+                    <td mat-cell *matCellDef="let element"> {{element.semestru}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+
+    </div>
+    <!-- <div fxFlex="40">
+        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    </div> -->
+</div>
+
+<br>
+<br>
+<br>
