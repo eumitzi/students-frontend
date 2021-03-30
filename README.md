@@ -32,3 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #####
 From the root project run ```npm install``` to install all the libraries from ```package.json```.
+####
+Set up git for projects and push them to your repo: ```https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line```
+####
+Set up a token in case you have two-factor authentication set: ```https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token``` 
