@@ -8,12 +8,14 @@ import { DefaultModule } from './layouts/default/default.module';
 import {DisciplinaComponent} from './modules/disciplina/disciplina.component';
 import {FormsModule} from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
+import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisciplinaComponent
+    DisciplinaComponent,
+    AnStudiuComponent
   ],
   imports: [
     BrowserModule,

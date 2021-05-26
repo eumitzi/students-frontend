@@ -1,42 +1,41 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DisciplinaService } from './disciplina.service';
+import { AnStudiuService } from './anStudiu.service';
 
 import * as xlsx from 'xlsx';
 import {Subscription} from 'rxjs';
 import {NotePerDisc} from '../../shared/components/model/notePerDisc';
-
-
+import {NoteDto} from '../../shared/components/model/notaDto';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './disciplina.component.html',
-  styleUrls: ['./disciplina.component.scss']
+  templateUrl: './anStudiu.component.html',
+  styleUrls: ['./anStudiu.component.scss']
 })
-export class DisciplinaComponent implements OnInit {
+export class AnStudiuComponent implements OnInit {
 
-  constructor(private disciplinaService: DisciplinaService) { }
+  constructor(private anStudiuService: AnStudiuService) { }
 
-  private numeStudent: string;
-  private prenumeStudent: string;
-  private numeDisciplina: string;
-  notePerDiscs: NotePerDisc[];
+  private idStudent: string;
+  private tipNote: string;
+  private idAnStudiu: string;
+  notePerAnStd: NoteDto[];
   sub: Subscription | undefined;
 
   ngOnInit() {
 
   }
   onSubmit() {
-    this.disciplinaService.getRepos(this.numeStudent, this.prenumeStudent, this.numeDisciplina).subscribe( data =>
+    this.anStudiuService.getRepos(this.idStudent, this.tipNote, this.idAnStudiu).subscribe( data =>
     {
       console.log(data)
-      this.notePerDiscs = data as NotePerDisc[]; // not working without this
-      console.log(this.notePerDiscs);
+      this.notePerAnStd = data as NoteDto[]; // not working without this
+      console.log(this.notePerAnStd);
     }
     );
-    console.log(this.notePerDiscs);
-    console.log(this.numeDisciplina);
-    console.log(this.numeStudent);
-    console.log(this.prenumeStudent);
+    console.log(this.notePerAnStd);
+    console.log(this.idStudent);
+    console.log(this.idAnStudiu);
+    console.log(this.tipNote);
   }
 
   // exportToExcel() {

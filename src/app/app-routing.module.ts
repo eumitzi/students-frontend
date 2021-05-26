@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DisciplinaComponent} from './modules/disciplina/disciplina.component';
-import { PostsComponent } from './modules/posts/posts.component';
+import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
+
 
 const routes: Routes = [{
   path: '',
@@ -12,8 +13,8 @@ const routes: Routes = [{
     path: '',
     component: DashboardComponent
   }, {
-    path: 'posts',
-    component: PostsComponent
+    path: 'anStudiu',
+    component: AnStudiuComponent
   },
     {
       path: 'discipline',

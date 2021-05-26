@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {NotePerDisc} from '../../shared/components/model/notePerDisc';
-import {NoteStdPerDisc} from '../../shared/components/model/noteStdPerDisc';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +22,7 @@ export class DisciplinaService {
 
     console.log(params.toString());
 
-    return this.http.get<NoteStdPerDisc[]>(this.noteStudDiscUrl, {params});
+    return this.http.get<NotePerDisc[]>(this.noteStudDiscUrl, {params});
   }
 
 }
