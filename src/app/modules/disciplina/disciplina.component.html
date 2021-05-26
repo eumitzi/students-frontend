@@ -20,7 +20,7 @@
                 <input [(ngModel)]='numeStudent' name="numeStud" type="text"/>
                 <input [(ngModel)]='prenumeStudent' name="prenumeStud" type="text"/>
                 <input [(ngModel)]='numeDisciplina' name="numeDis" type="text"/>
-                <button type="submit">Click Me!</button>
+                <button type="submit">Submit</button>
               </div>
             </div>
 
@@ -28,25 +28,18 @@
               <div fxFlex="60">
                 <div class="mat-elevation-z8">
                   <table class="table">
-                    <thead>
+                    <thead fxLayoutAlign="space-between center" fxLayoutGap="20px">
                     <tr>
-                      <th>Product</th>
-                      <th>Code</th>
-                      <th>Available</th>
-                      <th>Price</th>
-                      <th>5 Star Rating</th>
+                      <th>Tip Nota</th>
+                      <th>Data</th>
+                      <th>Valoare nota</th>
                     </tr>
                     </thead>
-
-                    <tbody>
+                    <tbody fxLayoutAlign="space-between center" fxLayoutGap="20px">
                     <tr *ngFor='let product of notePerDiscs'>
-                      <td>
-
-                      </td>
                       <td>{{ product.tipNota }}</td>
                       <td>{{ product.data }}</td>
                       <td>{{ product.valoareNota }}</td>
-                      <td></td>
                     </tr>
                     </tbody>
                     <!--                    <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>-->
