@@ -1,0 +1,62 @@
+<br>
+<form (ngSubmit)="onSubmit()">
+  <!-- Export Button  -->
+  <div class="container">
+    <div class="row py-5 justify-content-center">
+      <div class="col-md-8">
+        <div class="col-md-12 table-responsive" #table>
+          <div style="padding-bottom: 10px;padding-top: 10px;">
+            <div class="row">
+              <div class="col-sm-12">
+                <!--              <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">Filter by:</div>
+              <div class="col-md-4">
+                <input [(ngModel)]='numeStudent' name="numeStud" type="text"/>
+                <input [(ngModel)]='prenumeStudent' name="prenumeStud" type="text"/>
+                <input [(ngModel)]='numeDisciplina' name="numeDis" type="text"/>
+                <button type="submit">Click Me!</button>
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+              <div fxFlex="60">
+                <div class="mat-elevation-z8">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Code</th>
+                      <th>Available</th>
+                      <th>Price</th>
+                      <th>5 Star Rating</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr *ngFor='let product of noteStudDiscArr'>
+                      <td>
+
+                      </td>
+                      <td>{{ product.tipNota }}</td>
+                      <td>{{ product.data }}</td>
+                      <td>{{ product.valoareNota }}</td>
+                      <td></td>
+                    </tr>
+                    </tbody>
+                    <!--                    <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>-->
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

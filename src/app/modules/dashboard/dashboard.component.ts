@@ -1,16 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DashboardService } from '../dashboard.service';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { DashboardService } from './dashboard.service';
 
 import * as xlsx from 'xlsx';
 
-export default interface PeriodicElement {
+export default interface Disciplina {
   numeDisciplina: string;
   nrCrt: number;
   nota: number;
   semestru: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: Disciplina[] = [
   { nrCrt: 1, numeDisciplina: 'Algebra', nota: 5, semestru: '1' },
   { nrCrt: 2, numeDisciplina: 'Analiza matematica', nota: 7, semestru: '1' },
   { nrCrt: 3, numeDisciplina: 'Programare', nota: 7, semestru: '1' },
@@ -38,23 +37,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
   bigChart = [];
   cards = [];
   pieChart = [];
 
   displayedColumns: string[] = ['nrCrt', 'numeDisciplina', 'nota', 'semestru'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
-  @ViewChild('table', { static: false }) table: ElementRef;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private dashboardService: DashboardService) { }
 
-  private _listFilter: string = '';
+  private _listFilter = '';
 
   get listFilter(): string {
     return this._listFilter;
@@ -62,33 +55,8 @@ export class DashboardComponent implements OnInit {
 
   set listFilter(value: string) {
     this._listFilter = value;
-    console.log("in setter: ", value);
+    console.log('in setter: ', value);
    // this.filteredProducts = this.performFilter(value);
-  }
-
-  ngOnInit() {
-    this.bigChart = this.dashboardService.bigChart();
-    this.cards = this.dashboardService.cards();
-    this.pieChart = this.dashboardService.pieChart();
-    this.dataSource.paginator = this.paginator;
-  }
-
-  exportToExcel() {
-    const ws: xlsx.WorkSheet =   
-    xlsx.utils.table_to_sheet(this.table.nativeElement);
-    const wb: xlsx.WorkBook = xlsx.utils.book_new();
-    xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
-    xlsx.writeFile(wb, 'note.xlsx');
-  } 
-
-  //Cautare
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 
 }
