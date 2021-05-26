@@ -12,7 +12,6 @@ export class DisciplinaService {
   private noteStudDiscUrl: string;
 
   constructor(private http: HttpClient) {
-    // this.noteStudDiscUrl = 'http://localhost:8085/api/student/note/idDisciplina/str';
     this.noteStudDiscUrl = 'http://localhost:8085/api/student/testp';
   }
 

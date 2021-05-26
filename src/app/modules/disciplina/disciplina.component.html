@@ -17,9 +17,9 @@
             <div class="row">
               <div class="col-md-2">Filter by:</div>
               <div class="col-md-4">
-                <input [(ngModel)]='numeStudent' name="numeStud" type="text"/>
-                <input [(ngModel)]='prenumeStudent' name="prenumeStud" type="text"/>
-                <input [(ngModel)]='numeDisciplina' name="numeDis" type="text"/>
+                <input [(ngModel)]='numeStudent' name="numeStud" placeholder="nume" type="text"/>
+                <input [(ngModel)]='prenumeStudent' name="prenumeStud" placeholder="prenume" type="text"/>
+                <input [(ngModel)]='numeDisciplina' name="numeDis" placeholder="disciplina" type="text"/>
                 <button type="submit">Submit</button>
               </div>
             </div>
@@ -42,7 +42,6 @@
                       <td>{{ product.valoareNota }}</td>
                     </tr>
                     </tbody>
-                    <!--                    <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>-->
                   </table>
                 </div>
               </div>
