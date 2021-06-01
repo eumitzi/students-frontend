@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard/dashboard.service';
 import {MatDividerModule} from '@angular/material/divider';
+import {IgxPieChartModule} from 'igniteui-angular-charts';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MatDividerModule} from '@angular/material/divider';
     FlexLayoutModule,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    IgxPieChartModule,
+    FormsModule
   ],
   providers: [
     DashboardService

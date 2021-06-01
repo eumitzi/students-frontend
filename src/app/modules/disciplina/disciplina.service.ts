@@ -19,9 +19,6 @@ export class DisciplinaService {
       .set('numeStudent', numeStudent)
       .set('prenumeStudent', prenumeStudent)
       .set('numeDisciplina', numeDisciplina);
-
-    console.log(params.toString());
-
     return this.http.get<NotePerDisc[]>(this.noteStudDiscUrl, {params});
   }
 

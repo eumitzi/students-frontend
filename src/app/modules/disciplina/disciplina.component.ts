@@ -28,7 +28,6 @@ export class DisciplinaComponent implements OnInit {
   onSubmit() {
     this.disciplinaService.getRepos(this.numeStudent, this.prenumeStudent, this.numeDisciplina).subscribe( data =>
     {
-      console.log(data)
       this.notePerDiscs = data as NotePerDisc[]; // not working without this
       console.log(this.notePerDiscs);
     }
@@ -38,6 +37,7 @@ export class DisciplinaComponent implements OnInit {
     console.log(this.numeStudent);
     console.log(this.prenumeStudent);
   }
+
 
   // exportToExcel() {
   //   const ws: xlsx.WorkSheet =

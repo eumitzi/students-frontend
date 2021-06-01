@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import {DisciplinaComponent} from './modules/disciplina/disciplina.component';
 import {FormsModule} from '@angular/forms';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpClientModule} from '@angular/common/http';
 import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
+import {IgxPieChartModule} from 'igniteui-angular-charts';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
     BrowserAnimationsModule,
     DefaultModule,
     FormsModule,
-    HttpClientModule
-    // MatPaginatorModule,
+    HttpClientModule,
+    IgxPieChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

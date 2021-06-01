@@ -5,7 +5,6 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DisciplinaComponent} from './modules/disciplina/disciplina.component';
 import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
 
-
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,

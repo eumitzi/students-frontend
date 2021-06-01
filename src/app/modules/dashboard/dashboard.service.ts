@@ -1,65 +1,24 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {DiscNoteFin} from '../../shared/components/model/DiscNoteFin';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  constructor() { }
+  private notePerAnStudiu: string;
 
-  bigChart() {
-    return [{
-      name: 'Fizica',
-      data: [502, 635, 809, 947, 1402, 3634, 5268]
-    }, {
-      name: 'Logica digitala',
-      data: [106, 107, 111, 133, 221, 767, 1766]
-    }, {
-      name: 'Analiza matematica',
-      data: [163, 203, 276, 408, 547, 729, 628]
-    }, {
-      name: 'Algebra',
-      data: [18, 31, 54, 156, 339, 818, 1201]
-    }, {
-      name: 'Inginerie Electrica',
-      data: [2, 2, 2, 6, 13, 30, 46]
-    }];
+  constructor(private http: HttpClient) {
+    this.notePerAnStudiu = 'http://localhost:8085/api/student/noteFinale';
   }
 
-  cards() {
-    return [71, 78, 39, 66];
-  }
+  getRepos(numeStudent: string, prenumeStudent: string): Observable<DiscNoteFin[]> {
+    const params = new HttpParams()
+      .set('numeStudent', numeStudent)
+      .set('prenumeStudent', prenumeStudent)
 
-  pieChart() {
-    return [{
-      name: 'Chrome',
-      y: 61.41,
-      sliced: true,
-      selected: true
-    }, {
-      name: 'Internet Explorer',
-      y: 11.84
-    }, {
-      name: 'Firefox',
-      y: 10.85
-    }, {
-      name: 'Edge',
-      y: 4.67
-    }, {
-      name: 'Safari',
-      y: 4.18
-    }, {
-      name: 'Sogou Explorer',
-      y: 1.64
-    }, {
-      name: 'Opera',
-      y: 1.6
-    }, {
-      name: 'QQ',
-      y: 1.2
-    }, {
-      name: 'Other',
-      y: 2.61
-    }];
+    return this.http.get<DiscNoteFin[]>(this.notePerAnStudiu, {params});
   }
 }

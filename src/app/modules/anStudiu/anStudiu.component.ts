@@ -19,7 +19,6 @@ export class AnStudiuComponent implements OnInit {
   private tipNote: string;
   private idAnStudiu: string;
   notePerAnStd: NoteDto[];
-  sub: Subscription | undefined;
 
   ngOnInit() {
 
@@ -38,22 +37,5 @@ export class AnStudiuComponent implements OnInit {
     console.log(this.tipNote);
   }
 
-  // exportToExcel() {
-  //   const ws: xlsx.WorkSheet =
-  //   xlsx.utils.table_to_sheet(this.table.nativeElement);
-  //   const wb: xlsx.WorkBook = xlsx.utils.book_new();
-  //   xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
-  //   xlsx.writeFile(wb, 'note.xlsx');
-  // }
-
-  // Cautare
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
 
 }
