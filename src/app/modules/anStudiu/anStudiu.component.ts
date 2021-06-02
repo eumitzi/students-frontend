@@ -2,8 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AnStudiuService } from './anStudiu.service';
 
 import * as xlsx from 'xlsx';
-import {Subscription} from 'rxjs';
-import {NotePerDisc} from '../../shared/components/model/notePerDisc';
 import {NoteDto} from '../../shared/components/model/notaDto';
 
 @Component({

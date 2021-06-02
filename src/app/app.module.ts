@@ -10,6 +10,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AnStudiuComponent} from './modules/anStudiu/anStudiu.component';
 import {IgxPieChartModule} from 'igniteui-angular-charts';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableExporterModule} from "mat-table-exporter";
 
 @NgModule({
   declarations: [
@@ -24,7 +30,14 @@ import {IgxPieChartModule} from 'igniteui-angular-charts';
     DefaultModule,
     FormsModule,
     HttpClientModule,
-    IgxPieChartModule
+    IgxPieChartModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableExporterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
