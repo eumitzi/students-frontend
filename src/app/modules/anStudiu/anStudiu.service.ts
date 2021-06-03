@@ -14,9 +14,10 @@ export class AnStudiuService {
     this.notePerAnStudiu = 'http://localhost:8085/api/student/note/anStudiu';
   }
 
-  getRepos(idStudent: string, tipNote: string, idAnStudiu: string): Observable<NoteDto[]> {
+  getRepos(numeStudent: string, prenumeStudent:string,tipNote: string, idAnStudiu: string): Observable<NoteDto[]> {
     const params = new HttpParams()
-      .set('idStudent', idStudent)
+      .set('numeStudent', numeStudent)
+      .set('prenumeStudent', prenumeStudent)
       .set('tipNote', tipNote)
       .set('idAnStudiu', idAnStudiu);
 
