@@ -3,7 +3,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {DiscNoteFin} from '../../shared/components/model/DiscNoteFin';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import * as xlsx from "xlsx";
+import * as xlsx from 'xlsx';
 
 @Component({
   selector: 'app-dashboard',

@@ -40,23 +40,16 @@
                   <div class="table-responsive" *ngIf='notePerAnStd && notePerAnStd.length'>
 
                     <table mat-table [dataSource]="notePerAnStd" class="mat-elevation-z8">
-
-                      <!--- Note that these columns can be defined in any order.
-                            The actual rendered columns are set as a property on the row definition" -->
-
-                      <!-- nume disciplina column -->
                       <ng-container matColumnDef="numeDisc">
                         <th mat-header-cell *matHeaderCellDef> Nume Disciplina</th>
                         <td mat-cell *matCellDef="let element"> {{element.numeDisc}} </td>
                       </ng-container>
 
-                      <!-- nota finala column -->
                       <ng-container matColumnDef="data">
                         <th mat-header-cell *matHeaderCellDef> Data</th>
                         <td mat-cell *matCellDef="let element"> {{element.data}} </td>
                       </ng-container>
 
-                      <!-- an studiu column -->
                       <ng-container matColumnDef="valoareNota">
                         <th mat-header-cell *matHeaderCellDef> Valoare nota</th>
                         <td mat-cell *matCellDef="let element"> {{element.valoareNota}} </td>
